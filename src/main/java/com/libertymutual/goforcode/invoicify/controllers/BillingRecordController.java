@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BillingRecordController {
 
 	@GetMapping("")
-	public String login() {
+	public String list() {
 		return "billing-records/list";
 	}
 }

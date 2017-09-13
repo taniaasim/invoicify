@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/app.css">
+    <title>Signup</title>
+</head>
+
+<body>
+{{ #errorMessage }}
+	<div>{{ errorMessage }}</div>
+{{ /errorMessage }}
+
+    <h1>Sign up for Invoicify</h1>
+    <form method="post" action="/signup">
+        <input type="text" name="username" required>
+        <br>
+        <input type="password" name="password" required>
+		<br>
+		<input type="hidden" name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
+        <button>Sign up</button>
+    </form>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
