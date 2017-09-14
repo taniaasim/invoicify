@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Test;
 
 
-public class RateBasedBillingTests {
+public class RateBasedBillingRecordTests {
 
 	@Test
     public void test_that_getTotal_returns_rate_and_quantity_product() {
