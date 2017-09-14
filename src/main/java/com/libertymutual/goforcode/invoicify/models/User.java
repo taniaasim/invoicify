@@ -26,7 +26,12 @@ public class User implements UserDetails {
 	
 	@OneToMany(fetch=FetchType.EAGER, mappedBy="user", cascade=CascadeType.ALL)
 	private List<UserRole> roles;
-
+	
+	/* I don't know if we need this
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="user", cascade=CascadeType.ALL)
+	private List<BillingRecord> billingrecords;
+	*/
+	
 	// CONSTRUCTORS
 	public User(String username, String password, String roleName) {
 		this.username = username;
