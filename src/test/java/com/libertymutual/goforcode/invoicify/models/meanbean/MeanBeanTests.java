@@ -2,6 +2,7 @@ package com.libertymutual.goforcode.invoicify.models.meanbean;
 
 import org.junit.Test;
 import org.meanbean.test.BeanTester;
+import org.meanbean.test.ConfigurationBuilder;
 
 import com.libertymutual.goforcode.invoicify.models.FlatFeeBillingRecord;
 import com.libertymutual.goforcode.invoicify.models.RateBasedBillingRecord;
@@ -12,14 +13,18 @@ public class MeanBeanTests {
 	
 	@Test
 	public void testRateBasedBillingRecord() {
-		BeanTester beanTester = new BeanTester();
-		beanTester.testBean(RateBasedBillingRecord.class);
+		BeanTester tester = new BeanTester();
+		org.meanbean.test.Configuration configuration = new ConfigurationBuilder()
+				.ignoreProperty("createdOn").build();
+		tester.testBean(RateBasedBillingRecord.class, configuration);
 	}
 	
 	@Test
 	public void testFlatFeeBillingRecord() {
-		BeanTester beanTester = new BeanTester();
-		beanTester.testBean(FlatFeeBillingRecord.class);
+		BeanTester tester = new BeanTester();
+		org.meanbean.test.Configuration configuration = new ConfigurationBuilder()
+				.ignoreProperty("createdOn").build();
+		tester.testBean(FlatFeeBillingRecord.class, configuration);
 	}
 	
 	@Test

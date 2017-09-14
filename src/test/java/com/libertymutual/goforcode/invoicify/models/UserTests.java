@@ -2,6 +2,8 @@ package com.libertymutual.goforcode.invoicify.models;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.*;
+
 import org.junit.Test;
 
 public class UserTests {
@@ -11,20 +13,28 @@ public class UserTests {
 	@Test
     public void test_that_getAuthorities_returns_collection_of_granted() {
 	// arrange
-	RateBasedBillingRecord rbbr = new RateBasedBillingRecord();
-	rbbr.setRate(2.0);
-	rbbr.setQuantity(5.0);
-	double result = 2.0 * 5.0;
 	
 	// act
-	RateBasedBillingRecord actualrbbr = new RateBasedBillingRecord();
-	actualrbbr.setRate(2.0);
-	actualrbbr.setQuantity(5.0);
-	double actual = actualrbbr.getTotal();
-		
+	
 	// assert
-	assertThat(actual).isEqualTo(result);
 	} */
+	
+	// I can't figure out how to test if the role is being added to their list
+	@Test
+	public void test_that_User_object_is_constructed_with_arguments() {
+		//arrange
+		
+		//act
+		User actualPerson = new User("username", "password", "admin");
+	//	UserRole admin = new UserRole("tania", actualPerson);
+	
+		//assert
+		assertThat(actualPerson.getUsername()).isSameAs("username");
+		assertThat(actualPerson.getPassword()).isSameAs("password");
+	//	assertThat(actualPerson.getRoles()).contains(admin);
+
+			
+	}
 	
 	@Test 
 	public void test_that_isAccountNonExpired_returns_true() {
